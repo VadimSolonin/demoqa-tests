@@ -43,7 +43,7 @@ public class Tests {
         $("#firstName").setValue(USER_NAME);
         $("#lastName").setValue(USER_SURNAME);
         $("#userEmail").setValue(USER_EMAIL);
-        $(byText(USER_GENDER)).click();
+        $("#genterWrapper").$(byText(USER_GENDER)).click();
         $("#userNumber").setValue(USER_NUMBER);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption(MONTH_OF_BIRTH);
