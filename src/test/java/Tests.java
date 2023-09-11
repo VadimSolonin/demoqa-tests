@@ -22,7 +22,7 @@ public class Tests {
     public static final String MONTH_OF_BIRTH = "November";
     public static final int DAY_OF_BIRTH = 28;
     public static final String SUBJECT = "Maths";
-    public static final String HOBBIE = "Sports";
+    public static final String HOBBY = "Sports";
     public static final String USER_STATE = "Haryana";
     public static final String USER_CITY = "Karnal";
     public static final String ADDRESS = "Next time ;]";
@@ -51,7 +51,7 @@ public class Tests {
         $(".react-datepicker__day--0"+DAY_OF_BIRTH).click();
         $(".subjects-auto-complete__input").click();
         $("#subjectsInput").setValue(SUBJECT).pressEnter();
-        $("#hobbiesWrapper").$(byText(HOBBIE)).click();
+        $("#hobbiesWrapper").$(byText(HOBBY)).click();
         $("#uploadPicture").uploadFromClasspath("vsFile.png");
         $("#currentAddress").setValue(ADDRESS);
         $("#state").click();
@@ -67,7 +67,7 @@ public class Tests {
                 text(USER_NUMBER),
                 text(DAY_OF_BIRTH + " " + MONTH_OF_BIRTH+","+YEAR_OF_BIRTH),
                 text(SUBJECT),
-                text(HOBBIE),
+                text(HOBBY),
                 text("vsFile.png"),
                 text(ADDRESS),
                 text(USER_STATE + " " + USER_CITY));
