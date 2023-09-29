@@ -1,8 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.Test;
-import tests.TextBoxTests;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
