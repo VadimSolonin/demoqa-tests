@@ -13,7 +13,7 @@ public class TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     VerifyTextResultComponent verifyTextResultComponent = new VerifyTextResultComponent();
     TextBoxPage textBoxPage = new TextBoxPage();
-
+    TestData testData = new TestData();
 
     @BeforeAll
     static void beforeAll() {
