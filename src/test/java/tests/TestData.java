@@ -20,7 +20,7 @@ public class TestData {
             haryanaCity = {"Karnal", "Panipat"},
             rajasthanCity = {"Jaipur", "Jaiselmer"};
 
-    Map<String, String> cities = new HashMap<>() {{
+    Map<String, String> statesAndCities = new HashMap<>() {{
         put("NCR", RandomUtils.getRandomArrayValue(ncrCity));
         put("Uttar Pradesh", RandomUtils.getRandomArrayValue(uttarPradeshCity));
         put("Haryana", RandomUtils.getRandomArrayValue(haryanaCity));
@@ -41,7 +41,7 @@ public class TestData {
     public final String HOBBY = RandomUtils.getRandomArrayValue(hobbies);
     public final String FILE_NAME = "vsFile.png";
     public final String USER_STATE = RandomUtils.getRandomArrayValue(state);
-    public final String USER_CITY = cities.get(USER_STATE);
+    public final String USER_CITY = statesAndCities.get(USER_STATE);
     public final String CURRENT_ADDRESS = faker.address().streetAddress();
     public final String PERMANENT_ADDRESS = faker.address().streetAddress();
     public final String TEST_TEXT = faker.lorem().characters(10);
