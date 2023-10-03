@@ -21,16 +21,16 @@ public class RegistrationFormTests extends TestBase {
                 .setCity(testData.USER_CITY)
                 .clickSubmitButton();
         verifyTextResultComponent.checkResultWindowHaveText(testData.TEXT_IN_RESULT_WINDOW)
-                .verifyTableResult(testData.USER_NAME + " " + testData.USER_SURNAME)
-                .verifyTableResult(testData.USER_EMAIL)
-                .verifyTableResult(testData.USER_GENDER)
-                .verifyTableResult(testData.USER_NUMBER)
-                .verifyTableResult(testData.DAY_OF_BIRTH + " " + testData.MONTH_OF_BIRTH + "," + testData.YEAR_OF_BIRTH)
-                .verifyTableResult(testData.SUBJECT)
-                .verifyTableResult(testData.HOBBY)
-                .verifyTableResult(testData.FILE_NAME)
-                .verifyTableResult(testData.CURRENT_ADDRESS)
-                .verifyTableResult(testData.USER_STATE + " " + testData.USER_CITY);
+                .verifyTableResult("Student Name", testData.USER_NAME + " " + testData.USER_SURNAME)
+                .verifyTableResult("Student Email", testData.USER_EMAIL)
+                .verifyTableResult("Gender", testData.USER_GENDER)
+                .verifyTableResult("Mobile", testData.USER_NUMBER)
+                .verifyTableResult("Date of Birth", testData.DAY_OF_BIRTH + " " + testData.MONTH_OF_BIRTH + "," + testData.YEAR_OF_BIRTH)
+                .verifyTableResult("Subjects", testData.SUBJECT)
+                .verifyTableResult("Hobbies", testData.HOBBY)
+                .verifyTableResult("Picture", testData.FILE_NAME)
+                .verifyTableResult("Address", testData.CURRENT_ADDRESS)
+                .verifyTableResult("State and City", testData.USER_STATE + " " + testData.USER_CITY);
     }
 
     @Test
