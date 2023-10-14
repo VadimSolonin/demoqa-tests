@@ -1,6 +1,8 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 
 public class RegistrationFormTests extends TestBase {
 
@@ -34,6 +36,7 @@ public class RegistrationFormTests extends TestBase {
     }
 
     @Test
+    @Tag("RequiredFields")
     void checkRequiredFieldsViewTest() {
         registrationPage.openPage(testData.AUTOMATION_PRACTICE_URL)
                 .clickSubmitButton()
@@ -44,6 +47,7 @@ public class RegistrationFormTests extends TestBase {
     }
 
     @Test
+    @Tag("RequiredFields")
     void fillUserNumberByLettersTest() {
         registrationPage.openPage(testData.AUTOMATION_PRACTICE_URL)
                 .setUserNumber(testData.TEST_TEXT)
