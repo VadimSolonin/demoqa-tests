@@ -9,13 +9,13 @@ version = '1.0-SNAPSHOT'
 
 allure {
     report {
-        version.set("2.19.0")
+        version.set("2.21.0")
     }
     adapter {
         aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                adapterVersion.set("2.19.0")
+                adapterVersion.set("2.21.0")
             }
         }
     }
@@ -27,13 +27,18 @@ repositories {
 
 dependencies {
     testImplementation (
-            "com.codeborne:selenide:6.16.0",
+            "com.codeborne:selenide:6.17.0",
             "com.github.javafaker:javafaker:1.0.2",
             "org.junit.jupiter:junit-jupiter:5.9.3",
-            'io.qameta.allure:allure-selenide:2.19.0'
+            'io.qameta.allure:allure-selenide:2.21.0'
     )
-    testRuntimeOnly (
-            "org.slf4j:slf4j-simple:1.7.29")
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
 
 tasks.withType(Test) {
