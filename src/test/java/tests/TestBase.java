@@ -13,6 +13,8 @@ import pages.components.VerifyTextResultComponent;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public class TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -28,6 +30,7 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browser_version", "115.0");
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.remote = System.getProperty("remote_url", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.timeout = 10000;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
@@ -45,5 +48,6 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        closeWebDriver();
     }
 }
