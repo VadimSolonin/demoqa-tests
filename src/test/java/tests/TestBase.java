@@ -24,9 +24,10 @@ public class TestBase {
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "1920x1080";
-        Configuration.timeout = 10000;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browser =  System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browser_version", "115.0");
+        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
+        Configuration.remote = System.getProperty("remote_url", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
