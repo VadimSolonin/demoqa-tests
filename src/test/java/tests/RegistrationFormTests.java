@@ -3,12 +3,14 @@ package tests;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 
 public class RegistrationFormTests extends TestBase {
 
     @Test
+    @Tag("remote")
     void fillAllFormsAndVerifyResultTest() {
         step("Open form", () -> {
             registrationPage.openPage(testData.AUTOMATION_PRACTICE_URL);

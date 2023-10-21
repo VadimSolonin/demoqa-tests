@@ -27,7 +27,7 @@ repositories {
 
 dependencies {
     testImplementation (
-            "com.codeborne:selenide:6.17.0",
+            "com.codeborne:selenide:6.19.1",
             "com.github.javafaker:javafaker:1.0.2",
             "org.junit.jupiter:junit-jupiter:5.9.3",
             'io.qameta.allure:allure-selenide:2.21.0'
@@ -53,8 +53,18 @@ tasks.withType(Test) {
     }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 task check_required_fields(type: Test) {
     useJUnitPlatform {
         includeTags("RequiredFields")
+    }
+}
+
+task remote_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("remote")
     }
 }
