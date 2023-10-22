@@ -1,10 +1,12 @@
 package pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
@@ -28,6 +30,7 @@ public class RegistrationPage {
             selectCityDropdown = $("#city"),
             submitButton = $("#submit"),
             userForm = $("#userForm");
+    ElementsCollection tabIndex = $$(byAttribute("tabindex", "-1"));
 
 
     public RegistrationPage openPage(String pageAddress) {
@@ -71,7 +74,12 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setSubject(String subject) {
-        subjectsInput.setValue(subject).pressEnter();
+        subjectsInput.setValue(subject);
+        return this;
+    }
+
+    public RegistrationPage clickFirstTabItem() {
+        tabIndex.first().click();
         return this;
     }
 

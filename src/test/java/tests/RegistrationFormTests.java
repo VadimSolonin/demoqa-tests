@@ -3,45 +3,45 @@ package tests;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 
+@Tag("Regress")
 public class RegistrationFormTests extends TestBase {
 
     @Test
     void fillAllFormsAndVerifyResultTest() {
         step("Open form", () -> {
-            registrationPage.openPage(testData.AUTOMATION_PRACTICE_URL);
+            registrationPage.openPage(testData.automationPracticeUrl);
         });
         step("Fill form", () -> {
-            registrationPage.openPage(testData.AUTOMATION_PRACTICE_URL)
-                    .setFirstName(testData.USER_NAME)
-                    .setLastName(testData.USER_SURNAME)
-                    .setEmail(testData.USER_EMAIL)
-                    .setGender(testData.USER_GENDER)
-                    .setUserNumber(testData.USER_NUMBER)
-                    .setDateOfBirth(testData.DAY_OF_BIRTH, testData.MONTH_OF_BIRTH, testData.YEAR_OF_BIRTH)
-                    .setSubject(testData.SUBJECT)
-                    .selectHobby(testData.HOBBY)
-                    .uploadImage(testData.FILE_NAME)
-                    .setAddress(testData.CURRENT_ADDRESS)
-                    .setState(testData.USER_STATE)
-                    .setCity(testData.USER_CITY)
+            registrationPage.setFirstName(testData.userName)
+                    .setLastName(testData.userSurname)
+                    .setEmail(testData.userEmail)
+                    .setGender(testData.userGender)
+                    .setUserNumber(testData.userNumber)
+                    .setDateOfBirth(testData.dayOfBirth, testData.monthOfBirth, testData.yearOfBirth)
+                    .setSubject(testData.subject)
+                    .clickFirstTabItem()
+                    .selectHobby(testData.hobby)
+                    .uploadImage(testData.fileName)
+                    .setAddress(testData.currentAddress)
+                    .setState(testData.userState)
+                    .setCity(testData.userCity)
                     .clickSubmitButton();
         });
         step("Verify test results", () -> {
-            verifyTextResultComponent.checkResultWindowHaveText(testData.TEXT_IN_RESULT_WINDOW)
-                    .verifyTableResult("Student Name", testData.USER_NAME + " " + testData.USER_SURNAME)
-                    .verifyTableResult("Student Email", testData.USER_EMAIL)
-                    .verifyTableResult("Gender", testData.USER_GENDER)
-                    .verifyTableResult("Mobile", testData.USER_NUMBER)
-                    .verifyTableResult("Date of Birth", testData.DAY_OF_BIRTH + " " + testData.MONTH_OF_BIRTH + "," + testData.YEAR_OF_BIRTH)
-                    .verifyTableResult("Subjects", testData.SUBJECT)
-                    .verifyTableResult("Hobbies", testData.HOBBY)
-                    .verifyTableResult("Picture", testData.FILE_NAME)
-                    .verifyTableResult("Address", testData.CURRENT_ADDRESS)
-                    .verifyTableResult("State and City", testData.USER_STATE + " " + testData.USER_CITY);
+            verifyTextResultComponent.checkResultWindowHaveText(testData.textInResultWindow)
+                    .verifyTableResult("Student Name", testData.userName + " " + testData.userSurname)
+                    .verifyTableResult("Student Email", testData.userEmail)
+                    .verifyTableResult("Gender", testData.userGender)
+                    .verifyTableResult("Mobile", testData.userNumber)
+                    .verifyTableResult("Date of Birth", testData.dayOfBirth + " " + testData.monthOfBirth + "," + testData.yearOfBirth)
+                    .verifyTableResult("Subjects", testData.subject)
+                    .verifyTableResult("Hobbies", testData.hobby)
+                    .verifyTableResult("Picture", testData.fileName)
+                    .verifyTableResult("Address", testData.currentAddress)
+                    .verifyTableResult("State and City", testData.userState + " " + testData.userCity);
         });
 
     }
@@ -50,7 +50,7 @@ public class RegistrationFormTests extends TestBase {
     @Tag("RequiredFields")
     void checkRequiredFieldsViewTest() {
         step("Open form", () -> {
-            registrationPage.openPage(testData.AUTOMATION_PRACTICE_URL);
+            registrationPage.openPage(testData.automationPracticeUrl);
         });
         step("Verify css values", () -> {
             registrationPage.clickSubmitButton()
@@ -65,10 +65,10 @@ public class RegistrationFormTests extends TestBase {
     @Tag("RequiredFields")
     void fillUserNumberByLettersTest() {
         step("Open form", () -> {
-            registrationPage.openPage(testData.AUTOMATION_PRACTICE_URL);
+            registrationPage.openPage(testData.automationPracticeUrl);
         });
         step("Verify css values", () -> {
-            registrationPage.setUserNumber(testData.TEST_TEXT)
+            registrationPage.setUserNumber(testData.testText)
                     .clickSubmitButton()
                     .containsRequiredCssValues("#userNumber");
         });

@@ -7,22 +7,22 @@ public class TextBoxTests extends TestBase {
     @Test
     @Tag("remote")
     void fillAllFormsTest() {
-        textBoxPage.openPage(testData.TEXT_BOX_URL)
-                .setName(testData.USER_NAME)
-                .setEmail(testData.USER_EMAIL)
-                .setCurrentAddress(testData.CURRENT_ADDRESS)
-                .setPermanentAddress(testData.PERMANENT_ADDRESS)
+        textBoxPage.openPage(testData.textBoxUrl)
+                .setName(testData.userName)
+                .setEmail(testData.userEmail)
+                .setCurrentAddress(testData.currentAddress)
+                .setPermanentAddress(testData.permanentAddress)
                 .submitButtonClick();
-        verifyTextResultComponent.verifyOutputName(testData.USER_NAME)
-                .verifyOutputEmail(testData.USER_EMAIL)
-                .verifyOutputCurrentAddress(testData.CURRENT_ADDRESS)
-                .verifyOutputPermanentAddress(testData.PERMANENT_ADDRESS);
+        verifyTextResultComponent.verifyOutputName(testData.userName)
+                .verifyOutputEmail(testData.userEmail)
+                .verifyOutputCurrentAddress(testData.currentAddress)
+                .verifyOutputPermanentAddress(testData.permanentAddress);
     }
 
     @Test
     void clickSubmitButtonWithoutWrongEmailTest() {
-        textBoxPage.openPage(testData.TEXT_BOX_URL)
-                .setEmail(testData.USER_NAME)
+        textBoxPage.openPage(testData.textBoxUrl)
+                .setEmail(testData.userName)
                 .submitButtonClick()
                 .containsRequiredCssValues("#userEmail");
     }
