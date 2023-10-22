@@ -1,9 +1,11 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class TextBoxTests extends TestBase {
     @Test
+    @Tag("remote")
     void fillAllFormsTest() {
         textBoxPage.openPage(testData.TEXT_BOX_URL)
                 .setName(testData.USER_NAME)

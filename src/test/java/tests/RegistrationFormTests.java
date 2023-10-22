@@ -10,7 +10,6 @@ import static io.qameta.allure.Allure.step;
 public class RegistrationFormTests extends TestBase {
 
     @Test
-    @Tag("remote")
     void fillAllFormsAndVerifyResultTest() {
         step("Open form", () -> {
             registrationPage.openPage(testData.AUTOMATION_PRACTICE_URL);
