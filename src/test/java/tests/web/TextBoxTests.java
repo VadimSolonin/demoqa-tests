@@ -1,7 +1,8 @@
-package tests;
+package tests.web;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.web.TestBase;
 
 public class TextBoxTests extends TestBase {
     @Test
