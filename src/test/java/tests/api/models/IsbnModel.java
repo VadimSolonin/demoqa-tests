@@ -1,17 +1,12 @@
 package tests.api.models;
 
+import lombok.Data;
+
+@Data
 public class IsbnModel {
 
     public IsbnModel(String isbn) {
         this.isbn = isbn;
     }
-    private String isbn;
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
+    String isbn;
 }

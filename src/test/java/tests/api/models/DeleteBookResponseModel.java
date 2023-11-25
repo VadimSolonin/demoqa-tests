@@ -1,7 +1,8 @@
 package tests.api.models;
 
-import groovyjarjarantlr4.v4.codegen.model.SrcOp;
+import lombok.Data;
 
+@Data
 public class DeleteBookResponseModel {
 
     public DeleteBookResponseModel(String isbn, String userId) {
@@ -10,19 +11,4 @@ public class DeleteBookResponseModel {
     }
     String isbn, userId;
 
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 }

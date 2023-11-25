@@ -2,8 +2,8 @@ package tests.web;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.web.TestBase;
 
+@Tag("ui")
 public class TextBoxTests extends TestBase {
     @Test
     @Tag("remote")

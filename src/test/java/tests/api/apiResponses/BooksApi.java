@@ -17,7 +17,7 @@ public class BooksApi {
                 .statusCode(204);
     }
 
-    public void addBook(LoginResponseModel loginResponse, AddBooksListModel booksList ) {
+    public void addBook(LoginResponseModel loginResponse, AddBooksListRequestModel booksList ) {
         given()
                 .contentType(JSON)
                 .header("Authorization", "Bearer " + loginResponse.getToken())

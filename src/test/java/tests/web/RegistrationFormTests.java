@@ -5,9 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-
-
 @Tag("Regress")
+@Tag("ui")
 public class RegistrationFormTests extends TestBase {
 
     @Test

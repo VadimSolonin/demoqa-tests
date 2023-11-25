@@ -3,20 +3,22 @@
 //import org.junit.jupiter.api.extension.BeforeEachCallback;
 //import org.junit.jupiter.api.extension.ExtensionContext;
 //import org.openqa.selenium.Cookie;
+//import tests.api.TestData;
 //import tests.api.apiResponses.AuthorizationApi;
-//import tests.api.models.LoginModel;
+//import tests.api.models.LoginRequestModel;
 //import tests.api.models.LoginResponseModel;
 //
 //import static com.codeborne.selenide.Selenide.open;
 //import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 //
 //public class LoginExtension implements BeforeEachCallback {
-//    LoginModel loginModel = new LoginModel("VS", "1234Qwer!");
+//    LoginRequestModel loginRequestModel = new LoginRequestModel(TestData.LOGIN, TestData.PASSWORD);
 //    AuthorizationApi authorizationApi = new AuthorizationApi();
+//    LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
 //    @Override
 //    public void beforeEach(ExtensionContext context) {
 //
-//        LoginResponseModel loginResponse = authorizationApi.login(loginModel);
+//        LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
 //        open("/favicon.ico");
 //        getWebDriver().manage().addCookie(new Cookie("userID", loginResponse.getUserId()));
 //        getWebDriver().manage().addCookie(new Cookie("token", loginResponse.getToken()));

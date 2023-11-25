@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.qameta.allure' version '2.11.2'
+    id "io.freefair.lombok" version "6.0.0-m2"
 }
 
 group = 'ru.solonin'
@@ -78,5 +79,17 @@ task remote_test(type: Test) {
 task regress_tests(type: Test) {
     useJUnitPlatform {
         includeTags("Regress")
+    }
+}
+
+task ui_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("ui")
+    }
+}
+
+task api_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("api")
     }
 }
