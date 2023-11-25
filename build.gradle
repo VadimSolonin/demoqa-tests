@@ -37,7 +37,8 @@ dependencies {
             "com.github.javafaker:javafaker:1.0.2",
             "org.junit.jupiter:junit-jupiter:5.10.0",
             'io.qameta.allure:allure-selenide:2.21.0',
-            'org.slf4j:slf4j-simple:2.0.9'
+            'org.slf4j:slf4j-simple:2.0.9',
+            'org.aeonbits.owner:owner:1.0.4'
     )
 }
 
@@ -82,13 +83,13 @@ task regress_tests(type: Test) {
     }
 }
 
-task ui_tests(type: Test) {
+task uiTests(type: Test) {
     useJUnitPlatform {
         includeTags("ui")
     }
 }
 
-task api_tests(type: Test) {
+task apiTests(type: Test) {
     useJUnitPlatform {
         includeTags("api")
     }
