@@ -4,16 +4,19 @@ import tests.api.models.*;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
+import static tests.api.specs.ReqResSpec.requestSpec;
+import static tests.api.specs.ReqResSpec.responseSpec;
 
 public class BooksApi {
     public void deleteAllBooks(LoginResponseModel loginResponse) {
-        given()
+        given(requestSpec)
                 .contentType(JSON)
                 .header("Authorization", "Bearer " + loginResponse.getToken())
                 .queryParam("UserId", loginResponse.getUserId())
                 .when()
                 .delete("/BookStore/v1/Books")
                 .then()
+                .spec(responseSpec)
                 .statusCode(204);
     }
 
@@ -25,6 +28,7 @@ public class BooksApi {
                 .when()
                 .post("/BookStore/v1/Books")
                 .then()
+                .spec(responseSpec)
                 .statusCode(201);
     }
 
